@@ -34,14 +34,29 @@ export default class Creature implements ICreature, Serializable<Creature>{
     note: string;
     variants: object;
 
-    constructor(name: string, hp: number, str: number, dex: number, wil: number, armour: number = 0) {
-        this.name = name;
-        this.slug = name.toLowerCase();
-        this.hp = hp;
-        this.str = str;
-        this.dex = dex;
-        this.wil = wil;
-        this.armour = armour;
+    constructor() {}
+
+    public static build(name: string, hp: number, str: number, dex: number, wil: number, armour: number = 0) {
+        let creature = new Creature();
+        creature.name = name;
+        creature.slug = name.toLowerCase();
+        creature.hp = hp;
+        creature.str = str;
+        creature.dex = dex;
+        creature.wil = wil;
+        creature.armour = armour;
+        return creature;
+    }
+
+    public label(): string {
+        return this.name.toLowerCase();
+    }
+
+    public toJSON(): object {
+        return {
+            ...this,
+            label: `this coog catz -> ${this.label()}`,
+        }
     }
 
     deserialize(input): Creature {
