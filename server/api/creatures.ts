@@ -1,4 +1,4 @@
-import CreaturesService from '~/server/services/creaturesServiceDb';
+import CreaturesService from '~/server/services/creaturesService';
 
 // @ts-ignore
 export default defineEventHandler(async () => {

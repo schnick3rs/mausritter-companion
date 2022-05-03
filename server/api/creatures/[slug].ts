@@ -1,8 +1,7 @@
-import CreaturesService from "~/server/services/creaturesService";
+import CreaturesServiceDeprecated from "~/server/services/creaturesService";
 
 // @ts-ignore
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
     const {slug} = event.context.params;
-    const creature = CreaturesService.findBySlug(slug);
-    return creature;
+    return await CreaturesServiceDeprecated.findBySlug(slug);
 })
