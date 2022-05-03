@@ -1,9 +1,5 @@
 import CreatureAttack from "~/server/data/creatureAttack";
 
-interface Serializable<T> {
-    deserialize(input: Object): T;
-}
-
 interface ICreature {
     name: string;
     warband: boolean;
@@ -19,7 +15,8 @@ interface ICreature {
     variants: object;
 }
 
-export default class Creature implements ICreature, Serializable<Creature>{
+export default class Creature implements ICreature {
+
     name: string;
     slug: string;
     warband = false;
@@ -57,11 +54,6 @@ export default class Creature implements ICreature, Serializable<Creature>{
             ...this,
             label: `this coog catz -> ${this.label()}`,
         }
-    }
-
-    deserialize(input): Creature {
-        this.name = input.name;
-        return this;
     }
 
 }

@@ -1,7 +1,7 @@
 import Creature from "~/server/data/creature";
 import {map} from "~/server/config/database";
 
-let mapToCreature = (row) => { let item = new Creature(); Object.assign(item, row); return item; };
+let mapToCreature = (row) => { let item = new Creature(); Object.assign(item, row); console.info(item); return item; };
 
 export default class CreaturesService {
 

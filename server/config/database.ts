@@ -1,4 +1,5 @@
 import pkg from 'pg';
+
 const { Pool } = pkg;
 
 let p;
@@ -14,15 +15,13 @@ try {
 }
 
 export async function query(text, values = []) {
-    console.info('query:', text, values);
     return await pool.query(text, values)
 }
 
 export async function map(text, values = [], func) {
+    console.debug('query:', text, values);
     const { rows } = await pool.query(text, values);
-    let map = rows.map(row => func(row));
-    console.info(rows, map)
-    return map;
+    return rows.map(row => func(row));
 }
 
 export const pool = p;
