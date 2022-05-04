@@ -23,7 +23,7 @@
       <tbody>
         <tr v-for="creature in creatures" :key="creature.name">
           <td>
-            <nuxt-link :to="`/${creature.slug}`">
+            <nuxt-link :to="`/bestiary/${creature.slug}`">
               {{creature.name}}
             </nuxt-link>
           </td>
@@ -39,7 +39,7 @@
             </div>
           </td>
           <td>{{creature.notes}}</td>
-          <td><em>{{creature.want}}</em></td>
+          <td><em>{{creature.wants}}</em></td>
           <td><span v-if="creature.variants">{{creature.variants.name}}</span></td>
         </tr>
       </tbody>

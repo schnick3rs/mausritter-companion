@@ -10,7 +10,7 @@ interface ICreature {
     armour;
     attacks: CreatureAttack[];
     critical: string;
-    want: string;
+    wants: string;
     note: string;
     variants: object;
 }
@@ -27,7 +27,7 @@ export default class Creature implements ICreature {
     armour = 0;
     attacks: CreatureAttack[];
     critical: string;
-    want: string;
+    wants: string;
     note: string;
     variants: object;
 

@@ -16,11 +16,16 @@
           <strong v-if="creature.armour">, Armour {{creature.armour}}</strong>
         </div>
         <div v-if="creature.attacks">
+          <strong>Attacks:</strong>
+          <template v-for="attack in creature.attacks">
+            <strong v-if="attack.die">d{{attack.die}}</strong> <strong>{{attack.name}}</strong>
+            <span v-if="attack.stat && attack.stat !== 'str'"> (damages {{attack.stat.toUpperCase()}})</span>,
+          </template>
         </div>
         <div v-if="creature.notes">{{creature.notes}}</div>
       </div>
       <div>
-        <em>{{creature.want}}</em>
+        <em>{{creature.wants}}</em>
       </div>
       <div v-if="creature.variants">
         <strong>{{creature.variants.name}}</strong>
