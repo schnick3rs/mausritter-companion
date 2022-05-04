@@ -1,10 +1,13 @@
 import Creature from "~/server/data/creature";
 import {map} from "~/server/config/database";
 
-let mapToCreature = (row) => { let item = new Creature(); Object.assign(item, row); console.info(item); return item; };
+const mapToCreature = (row):Creature => {
+    let item = new Creature();
+    Object.assign(item, row);
+    return item;
+};
 
 export default class CreaturesService {
-
 
     public static async findAll(): Promise<Creature[]> {
         return await map('SELECT * FROM mausritter_companion.creatures', [], mapToCreature);
