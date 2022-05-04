@@ -35,7 +35,7 @@
           <td>
             <div v-for="attack in creature.attacks">
               <strong v-if="attack.die">d{{attack.die}}</strong> <strong>{{attack.name}}</strong>
-              <span v-if="attack.stat !== 'str'"> (damages {{attack.stat.toUpperCase()}})</span>
+              <span v-if="attack.stat && attack.stat !== 'str'"> (damages {{attack.stat.toUpperCase()}})</span>
             </div>
           </td>
           <td>{{creature.notes}}</td>
