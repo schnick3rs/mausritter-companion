@@ -1,7 +1,7 @@
-import Creature from "~/server/data/creature";
-import {map} from "~/server/config/database";
+import Creature from "$lib/data/creature";
+import {map} from "$lib/database";
 
-const mapToCreature = (row):Creature => {
+const mapToCreature = (row: any):Creature => {
     let item = new Creature();
     Object.assign(item, row);
     return item;

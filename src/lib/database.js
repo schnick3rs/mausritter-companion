@@ -5,8 +5,8 @@ const { Pool } = pkg;
 let p;
 try {
     p = new Pool({
-        connectionString: useRuntimeConfig().databaseUrl,
-        ssl: useRuntimeConfig().databaseDisableSsl ? false : {
+        connectionString: import.meta.env.VITE_DATABASE_URL,
+        ssl: import.meta.env.VITE_DATABASE_DISABLE_SSL ? false : {
             rejectUnauthorized: false,
         },
     });

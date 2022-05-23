@@ -1,4 +1,4 @@
-import CreatureAttack from "~/server/data/creatureAttack";
+import type CreatureAttack from "$lib/data/creatureAttack";
 
 interface ICreature {
     name: string;
@@ -7,7 +7,7 @@ interface ICreature {
     str: number;
     dex: number;
     wil: number;
-    armour;
+    armour: number;
     attacks: CreatureAttack[];
     critical: string;
     wants: string;

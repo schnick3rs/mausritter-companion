@@ -1,14 +1,12 @@
-node_modules
-*.log*
-.nuxt
-.nitro
-.cache
-.output
-.env
-.ideaDataSources
-dataSources
+.idea
 .sql
 
-*.iml
-*.ipr
-*.iws
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+
